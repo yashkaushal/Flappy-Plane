@@ -3,20 +3,16 @@
 public class Generate : MonoBehaviour
 {
 	public GameObject rocks;
-	int score = 0;
+    public static int score = 0;
 	
 	// Use this for initialization
 	void Start()
 	{
-		InvokeRepeating("CreateObstacle", 1f, 1.5f);
+        InvokeRepeating("CreateObstacle", 1f, Random.Range(1.5f, 2f));
 	}
 	
 	// Update is called once per frame
-	void OnGUI () 
-	{
-		GUI.color = Color.black;
-		GUILayout.Label(" Score: " + score.ToString());
-	}
+	
 	
 	void CreateObstacle()
 	{
