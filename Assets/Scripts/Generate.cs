@@ -3,7 +3,6 @@
 public class Generate : MonoBehaviour
 {
 	public GameObject rocks;
-    public static int score = 0;
 	
 	// Use this for initialization
 	void Start()
@@ -17,6 +16,7 @@ public class Generate : MonoBehaviour
 	void CreateObstacle()
 	{
 		Instantiate(rocks);
-		score++;
 	}
+
+
 }

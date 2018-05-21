@@ -5,7 +5,16 @@ public class Player : MonoBehaviour
 	// The force which is added when the player jumps
 	// This can be changed in the Inspector window
 	public Vector2 jumpForce = new Vector2(0, 300);
-	
+
+    int score = 0;
+    [SerializeField]
+    private UnityEngine.UI.Text scoreText;
+
+	private void Start()
+	{
+        updateScoreText();
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -30,6 +39,19 @@ public class Player : MonoBehaviour
 	{
 		Die();
 	}
+
+    public void updateScoreText()
+    {
+        scoreText.text = "Score : " + score + System.Environment.NewLine + "Best : " + "5";
+        score++;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("scores!");
+        updateScoreText();
+
+    }
 	
 	void Die()
 	{
