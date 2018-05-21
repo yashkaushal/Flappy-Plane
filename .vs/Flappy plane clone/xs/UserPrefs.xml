@@ -2,10 +2,11 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Score.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="26" Column="3" />
-      <File FileName="Assets/Scripts/Obstacle.cs" Line="14" Column="65" />
+      <File FileName="Assets/Scripts/Player.cs" Line="22" Column="39" />
+      <File FileName="Assets/Scripts/Obstacle.cs" Line="5" Column="15" />
       <File FileName="Assets/Scripts/Generate.cs" Line="19" Column="1" />
-      <File FileName="Assets/Scripts/Score.cs" Line="11" Column="3" />
+      <File FileName="Assets/Scripts/MenuControl.cs" Line="16" Column="1" />
+      <File FileName="Assets/Scripts/Score.cs" Line="21" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -6,13 +6,34 @@ public class Player : MonoBehaviour
 	// This can be changed in the Inspector window
 	public Vector2 jumpForce = new Vector2(0, 300);
 
-    int score = 0;
+    int score = -1;
     [SerializeField]
     private UnityEngine.UI.Text scoreText;
+
+    public GameObject[] Planes;
+
+    public static int highScore;
 
 	private void Start()
 	{
         updateScoreText();
+        if(MenuControl.instance.myplanecolour == MenuControl.PlaneColour.Green){
+            Planes[0].SetActive(true);
+        }
+        else{
+            Planes[1].SetActive(true);
+        }
+
+        if (PlayerPrefs.HasKey("highScore"))
+        {
+            highScore = PlayerPrefs.GetInt("highScore");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("highScore", 0);
+            PlayerPrefs.Save();
+        }
+
 	}
 
 	// Update is called once per frame
@@ -42,8 +63,16 @@ public class Player : MonoBehaviour
 
     public void updateScoreText()
     {
-        scoreText.text = "Score : " + score + System.Environment.NewLine + "Best : " + "5";
         score++;
+
+        if(highScore < score){
+            PlayerPrefs.SetInt("highScore", score);
+            PlayerPrefs.Save();
+
+            highScore = score;
+        } 
+        scoreText.text = "Score : " + score + System.Environment.NewLine + "Best : " + highScore.ToString();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
